@@ -10,7 +10,7 @@ var app = express();
 // handlebar
 var exphbs  = require('express-handlebars');
 var hbs = exphbs.create ( { 
-	defaultLayout: 'main'
+	defaultLayout: path.join(__dirname, '/views/layouts/main')
 });
 
 app.set('views', path.join(__dirname, 'views'));
