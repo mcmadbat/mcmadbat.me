@@ -10,11 +10,9 @@ body {
   display: table;
 }
 
-
 /* Header related */
 .header {
   display: table-cell;
-
   width: 100%;
   height: 100%;
 
@@ -27,6 +25,8 @@ body {
 
   background-color: #222;
   vertical-align: middle;
+
+  align-content: center;
 }
 
 .content {
@@ -34,7 +34,7 @@ body {
   min-width: 200px;
 
   margin: 0 auto;
-  text-align: left;
+  text-align: center;
 }
 
 .content .row {
@@ -52,18 +52,24 @@ body {
   padding: 0;
   display: table-cell;
   vertical-align: middle;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 /* font related */
 .content h1 {
-  font-size: 5rem;
+  font-size: 5.5rem;
   margin: 0 auto;
 }
 
 .content p {
   font-size: 2rem;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 400px) {
+  .content p {
+    display: none
+  }
 }
 
 .content a {
