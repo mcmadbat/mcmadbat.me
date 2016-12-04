@@ -1,3 +1,5 @@
+'use strict';
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -46,7 +48,7 @@ app.use(function(err, req, res, next) {
 	res.locals.error = req.app.get('env') === 'development' ? err : {};
 
 	// only leak msg in development
-	var msg = app.get( 'env' ) === 'development' ? err.message : '';
+	var msg = app.get('env') === 'development' ? err.message : '';
 
 	// render the error page
 	res.status( err.status || 500 );
