@@ -1,17 +1,17 @@
 'use strict'
 
-var express = require('express')
-var path = require('path')
-var favicon = require('serve-favicon')
-var logger = require('morgan')
-var cookieParser = require('cookie-parser')
-var bodyParser = require('body-parser')
+const express = require('express')
+const path = require('path')
+const favicon = require('serve-favicon')
+const logger = require('morgan')
+const cookieParser = require('cookie-parser')
+const bodyParser = require('body-parser')
 
-var app = express()
+const app = express()
 
 // handlebar
-var exphbs = require('express-handlebars')
-var hbs = exphbs.create({
+const exphbs = require('express-handlebars')
+const hbs = exphbs.create({
   defaultLayout: path.join(__dirname, '/views/layouts/main')
 })
 
@@ -20,7 +20,7 @@ app.engine('handlebars', hbs.engine)
 app.set('view engine', 'handlebars')
 
 // routers
-var index = require('./routes/index')
+const index = require('./routes/index')
 
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
@@ -36,8 +36,8 @@ app.use('/', index)
 app.use(function (req, res, next) {
   var msg = `CODE 404: ${req.path} does not exist!`
   var err = new Error(msg)
-  	err.status = 404
-  	next(err)
+  err.status = 404
+  next(err)
 })
 
 // error handler
